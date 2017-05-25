@@ -18,6 +18,20 @@ hs_err_pid*
 # OSX
 # =========================
 
+# Files
+CREDITS-fml.txt
+build.gradle
+forge-1.8.9-11.15.1.1722-changelog.txt
+gradlew.bat
+LICENSE-fml.txt
+MinecraftForge-Credits.txt
+MinecraftForge-License.txt
+README.txt
+Paulscode IBXM Library License.txt
+gradlew
+Paulscode SoundSystem CodecIBXM License.txt
+/gradle
+
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -61,3 +75,26 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
