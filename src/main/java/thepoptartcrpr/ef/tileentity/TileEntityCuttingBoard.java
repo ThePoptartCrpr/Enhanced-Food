@@ -36,35 +36,12 @@ public class TileEntityCuttingBoard extends TileEntity implements ITickable {
 		super.readFromNBT(nbt);
 		this.cutTime = nbt.getInteger("CutTime");
 		this.handler.deserializeNBT(nbt.getCompoundTag("ItemStackHandler"));
-		/*NBTTagList nbttaglist = nbt.getTagList("Items", 10);
-		this.ovenItemStacks = new ItemStack[this.getSizeInventory()];
-		
-		for (int i = 0; i < nbttaglist.tagCount(); ++i) {
-			NBTTagCompound nbttagcompound = nbttaglist.getCompoundTagAt(i);
-			int j = nbttagcompound.getByte("Slot");
-			
-			if (j >= 0 && j < this.ovenItemStacks.length) {
-				handler.setStackInSlot(j, ItemStack.loadItemStackFromNBT(nbttagcompound));
-			}
-		}*/
 	}
 	
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
 		nbt.setInteger("CutTime", this.cutTime);
 		nbt.setTag("ItemStackHandler", this.handler.serializeNBT());
-		/*NBTTagList nbttaglist = new NBTTagList();
-		
-		for (int i = 0; i < this.ovenItemStacks.length; ++i) {
-			if (handler.getStackInSlot(i) != null) {
-				NBTTagCompound nbttagcompound = new NBTTagCompound();
-				nbttagcompound.setByte("Slot", (byte)i);
-				handler.getStackInSlot(i).writeToNBT(nbttagcompound);
-				nbttaglist.appendTag(nbttagcompound);
-			}
-		}
-		
-		nbt.setTag("Items", nbttaglist);*/
 		return super.writeToNBT(nbt);
 	}
 

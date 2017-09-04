@@ -45,25 +45,6 @@ public class OvenRecipes {
 	private static boolean compareItemStacks(ItemStack stack1, ItemStack stack2) {
 		return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1.getMetadata());
 	}
-
-	/*public static void addOvenRecipe(Item input, Item output) {
-		ItemStack inputStack = new ItemStack(input);
-		ItemStack outputStack = new ItemStack(output);
-		if (getOvenResult(inputStack) != null) {
-			Utils.getConsole().info("Conflicting recipes, ignoring recipe for " + input);
-		} else {
-			ovenList.put(inputStack, outputStack);
-			OvenRecipes recipe = new OvenRecipes(outputStack, inputStack);
-			recipeList.add(recipe);
-		}
-	}*/
-	
-	/*	public static void addRecipe(ItemStack output, Object input, int time, int creosoteOutput)
-	{
-		CokeOvenRecipe recipe = new CokeOvenRecipe(output, input, time, creosoteOutput);
-		if(recipe.input!=null)
-			recipeList.add(recipe);
-	}*/
 	
 	public static void addOvenRecipe(ItemStack output, Object input) {
 		ItemStack inputStack = (ItemStack) input;

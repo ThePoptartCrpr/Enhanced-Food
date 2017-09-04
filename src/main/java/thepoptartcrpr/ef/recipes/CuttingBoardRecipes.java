@@ -21,9 +21,6 @@ public class CuttingBoardRecipes {
 	public final ItemStack output;
 	public final int knifeTime, noTime;
 	
-	private static final Map<ItemStack, ItemStack> cuttingList = Maps.<ItemStack, ItemStack>newHashMap();
-	private static final Map<ItemStack, Integer> knifeTimeList = Maps.<ItemStack, Integer>newHashMap();
-	private static final Map<ItemStack, Integer> noTimeList = Maps.<ItemStack, Integer>newHashMap();
 	public static ArrayList<CuttingBoardRecipes> recipeList = new ArrayList<CuttingBoardRecipes>();
 	
 	public static void registerCuttingRecipes() {
@@ -39,13 +36,7 @@ public class CuttingBoardRecipes {
 	
 	@Nullable
 	public static ItemStack getCuttingResult(ItemStack stack) {
-		/*for (Entry<ItemStack, ItemStack> entry : cuttingList.entrySet()) {
-			if (compareItemStacks(stack, (ItemStack)entry.getKey())) {
-				return (ItemStack)entry.getValue();
-			}
-		}*/
 		for (int i = 0; i < recipeList.size(); i++) {
-			// if (compareItemStacks((ItemStack) recipeList.get(i).input, stack)) {
 			if (ItemStack.areItemsEqual((ItemStack) recipeList.get(i).input, stack)) {
 				return (ItemStack) recipeList.get(i).output;
 			}
@@ -76,7 +67,6 @@ public class CuttingBoardRecipes {
 		if (getCuttingResult(inputStack) != null) {
 			Utils.getConsole().info("Conflicting recipes, ignoring recipe for " + input);
 		} else {
-			cuttingList.put(inputStack, output);
 			CuttingBoardRecipes recipe = new CuttingBoardRecipes(inputStack, output, knifeTime, noTime);
 			recipeList.add(recipe);
 			Utils.getConsole().info(recipeList);
@@ -90,7 +80,6 @@ public class CuttingBoardRecipes {
 		if (getCuttingResult(inputStack) != null) {
 			Utils.getConsole().info("Conflicting recipes, ignoring recipe for " + input);
 		} else {
-			cuttingList.put(inputStack, outputStack);
 			outputStack = new ItemStack(output);
 			CuttingBoardRecipes recipe = new CuttingBoardRecipes(outputStack, input, knifeTime, noTime);
 			recipeList.add(recipe);
@@ -103,7 +92,6 @@ public class CuttingBoardRecipes {
 		if (getCuttingResult(inputStack) != null) {
 			Utils.getConsole().info("Conflicting recipes, ignoring recipe for " + input);
 		} else {
-			cuttingList.put(inputStack, output);
 			CuttingBoardRecipes recipe = new CuttingBoardRecipes(output, inputStack, knifeTime, noTime);
 			recipeList.add(recipe);
 			Utils.getConsole().info(recipeList);
@@ -116,7 +104,6 @@ public class CuttingBoardRecipes {
 		if (getCuttingResult(inputStack) != null) {
 			Utils.getConsole().info("Conflicting recipes, ignoring recipe for " + input);
 		} else {
-			cuttingList.put(inputStack, output);
 			CuttingBoardRecipes recipe = new CuttingBoardRecipes(output, input, knifeTime, noTime);
 			recipeList.add(recipe);
 			Utils.getConsole().info(recipeList);

@@ -315,7 +315,6 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 		if (this.fluidSize <= 0) {
 			return false;
 		} else {
-			// ItemStack itemstack = FurnaceRecipes.instance().getSmeltingResult(handler.getStackInSlot(0));
 			ItemStack itemstack = OvenRecipes.getOvenResult(handler.getStackInSlot(0));
 			if (itemstack == null) return false;
 			if (handler.getStackInSlot(2) == null) return true;
@@ -326,11 +325,8 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 	}
 	
 	public void smeltItem() {
-		// Utils.getConsole().info(this.canSmelt());
 		if (this.canSmelt()) {
-			// ItemStack itemstack = FurnaceRecipes.instance().getSmeltingResult(handler.getStackInSlot(0));
 			ItemStack itemstack = OvenRecipes.getOvenResult(handler.getStackInSlot(0));
-			// Utils.getConsole().info(itemstack);
 			
 			if (handler.getStackInSlot(2) == null) {
 				handler.setStackInSlot(2, itemstack.copy());
@@ -361,7 +357,6 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 	}
 	
 	public boolean isBurning() {
-		// return this.ovenBurnTime > 0;
 		if (handler.getStackInSlot(0) != null) {
 			return this.canSmelt();
 		} else {
@@ -382,7 +377,6 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 	}
 	
 	public boolean canFill(int amount) {
-		// Utils.getConsole().info((this.fluidSize + amount <= this.maxCapacity) + " capacity " + this.maxCapacity + " fluidsize " + (this.fluidSize + amount) + " size " + amount + " size " + this.fluidSize);
 		Utils.getConsole().info(this.maxCapacity);
 		return this.fluidSize + amount <= this.maxCapacity;
 	}
