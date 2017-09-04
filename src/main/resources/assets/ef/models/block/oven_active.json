@@ -1,0 +1,8 @@
+{
+    "parent":"ef:block/machine",
+    "textures":{
+        "side":"ef:blocks/oven_side",
+        "front":"ef:blocks/oven_front_activated",
+        "top":"ef:blocks/oven_top"
+    }
+}

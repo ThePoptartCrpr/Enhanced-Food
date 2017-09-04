@@ -1,0 +1,9 @@
+{
+	"variants":{
+		"facing=north":{"model":"ef:oven"},
+		"facing=south":{"model":"ef:oven", "y":180},
+		"facing=east":{"model":"ef:oven", "y":90},
+		"facing=west":{"model":"ef:oven", "y":270}
+		"normal":{"model":"ef:oven"}
+	}
+}

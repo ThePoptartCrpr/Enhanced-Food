@@ -1,0 +1,16 @@
+{
+	"variants":{
+		"active=false,facing=north":{"model":"ef:oven"},
+		"active=false,facing=south":{"model":"ef:oven", "y":180},
+		"active=false,facing=east":{"model":"ef:oven", "y":90},
+		"active=false,facing=west":{"model":"ef:oven", "y":270},
+		"active=false,facing=up":{"model":"ef:oven", "y":180},
+		"active=false,facing=down":{"model":"ef:oven", "y":180},
+		"active=true,facing=north":{"model":"ef:oven_active"},
+		"active=true,facing=south":{"model":"ef:oven_active", "y":180},
+		"active=true,facing=east":{"model":"ef:oven_active", "y":90},
+		"active=true,facing=west":{"model":"ef:oven_active", "y":270},
+		"active=true,facing=up":{"model":"ef:oven_active", "y":180},
+		"active=true,facing=down":{"model":"ef:oven_active", "y":180}
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"variants":{
+		"knife=true":{"model":"ef:table_cutting_board_knife"},
+		"knife=false":{"model":"ef:table_cutting_board"}
+	}
+}

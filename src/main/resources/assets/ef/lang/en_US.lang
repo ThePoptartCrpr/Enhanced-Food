@@ -1,0 +1,50 @@
+tile.salt_ore.name=Salt Ore
+
+tile.corn_crop.name=Corn Crop
+
+tile.oven.name=Oven
+tile.table_empty.name=Table
+tile.table_knife.name=Table
+tile.table_cutting_board.name=Table
+tile.table_mixing_bowl.name=Table
+
+tile.fluid_fuel.name=Fuel Bucket
+
+fluid.fluid_fuel=Fuel
+
+item.salt.name=Salt
+item.filleted_tuna.name=Filleted Tuna
+item.tuna_fish.name=Raw Tuna
+item.dough_bread.name=Bread Dough
+
+item.corn.name=Corn
+
+item.corn_seeds.name=Corn Seeds
+
+item.stainless_steel_knife.name=Knife
+item.saw.name=Saw
+item.cutting_board.name=Cutting Board
+item.mixing_bowl.name=Mixing Bowl
+item.spoon.name=Wooden Spoon
+
+item.saw_handle.name=Saw Handle
+item.saw_head.name=Saw Head
+item.cut_wood.name=Cut Wood
+
+container.oven=Oven
+container.cutting_board=Cutting Board
+
+itemGroup.effood=Enhanced Food - Food
+itemGroup.efcrops=Enhanced Food - Crops
+itemGroup.efingredient=Enhanced Food - Ingredients
+itemGroup.efmachines=Enhanced Food - Utilities
+itemGroup.efores=Enhanced Food - Ores
+itemGroup.eftools=Enhanced Food - Tools
+itemGroup.efparts=Enhanced Food - Parts
+
+achievement.crop=The Beginning
+achievement.crop.desc=Break grass until you find a seed from Enhanced Food
+achievement.harvest=Harvesting Success
+achievement.harvest.desc=Harvest a crop from Enhanced Food
+
+stainless_steel_knife.tooltip=Stainless Steel

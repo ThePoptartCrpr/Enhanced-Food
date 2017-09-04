@@ -1,14 +1,14 @@
 [
 {
-  "modid": "eh",
+  "modid": "ef",
   "name": "Enhanced Food",
-  "description": "Adds a variety of new foods to the game.",
-  "version": "0.1",
-  "mcversion": "1.8.9",
-  "url": "thepoptartcrpr.github.io",
+  "description": "Enhances the food experience of Minecraft.",
+  "version": "0.1.0",
+  "mcversion": "1.10.2",
+  "url": "http://thepoptartcrpr.github.io",
   "updateUrl": "",
   "authorList": ["ThePoptartCrpr"],
-  "credits": "",
+  "credits": "Pam's HarvestCraft, as the inspiration of this mod",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
