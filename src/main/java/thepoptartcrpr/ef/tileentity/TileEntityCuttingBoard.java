@@ -47,26 +47,30 @@ public class TileEntityCuttingBoard extends TileEntity implements ITickable {
 
 	@Override
 	public void update() {
-		BlockTableCuttingBoard.setKnife(this.hasKnife(), this.worldObj, pos);
-		
-		if (this.canCut()) {
-			ItemStack inputStack = handler.getStackInSlot(1);
-			if (this.hasKnife()) {
-				totalCutTime = CuttingBoardRecipes.getCuttingTimeKnife(inputStack);
-				cutTime++;
-				if (cutTime >= totalCutTime) {
-					this.cutItem();
-					cutTime = 0;
-				}
-			} else {
-				if (CuttingBoardRecipes.getCuttingTimeNoKnife(inputStack) != 0) {
-					totalCutTime = CuttingBoardRecipes.getCuttingTimeNoKnife(inputStack);
+		if (!this.worldObj.isRemote) {
+			BlockTableCuttingBoard.setKnife(this.hasKnife(), this.worldObj, pos);
+			
+			if (this.canCut()) {
+				ItemStack inputStack = handler.getStackInSlot(1);
+				if (this.hasKnife()) {
+					totalCutTime = CuttingBoardRecipes.getCuttingTimeKnife(inputStack);
 					cutTime++;
 					if (cutTime >= totalCutTime) {
 						this.cutItem();
 						cutTime = 0;
 					}
+				} else {
+					if (CuttingBoardRecipes.getCuttingTimeNoKnife(inputStack) != 0) {
+						totalCutTime = CuttingBoardRecipes.getCuttingTimeNoKnife(inputStack);
+						cutTime++;
+						if (cutTime >= totalCutTime) {
+							this.cutItem();
+							cutTime = 0;
+						}
+					}
 				}
+			} else {
+				this.cutTime = 0;
 			}
 		}
 	}

@@ -21,7 +21,6 @@ hs_err_pid*
 # Files
 CREDITS-fml.txt
 build.gradle
-forge-1.8.9-11.15.1.1722-changelog.txt
 gradlew.bat
 LICENSE-fml.txt
 MinecraftForge-Credits.txt
@@ -31,6 +30,9 @@ Paulscode IBXM Library License.txt
 gradlew
 Paulscode SoundSystem CodecIBXM License.txt
 /gradle
+LICENSE-new.txt
+*-changelog.txt
+gradle.properties
 
 .DS_Store
 .AppleDouble
