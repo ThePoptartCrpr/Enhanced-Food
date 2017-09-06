@@ -13,6 +13,7 @@ import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import thepoptartcrpr.ef.blocks.machines.BlockTableCuttingBoard;
@@ -21,7 +22,7 @@ import thepoptartcrpr.ef.recipes.CuttingBoardRecipes;
 import thepoptartcrpr.ef.recipes.OvenRecipes;
 import thepoptartcrpr.ef.utils.Utils;
 
-public class TileEntityCuttingBoard extends TileEntity implements ITickable {
+public class TileEntityCuttingBoard extends TileEntity implements ITickable, ICapabilityProvider {
 	
 	private ItemStackHandler handler;
 	public int cutTime;
@@ -33,9 +34,9 @@ public class TileEntityCuttingBoard extends TileEntity implements ITickable {
 	
 	@Override
 	public void readFromNBT(NBTTagCompound nbt) {
-		super.readFromNBT(nbt);
 		this.cutTime = nbt.getInteger("CutTime");
 		this.handler.deserializeNBT(nbt.getCompoundTag("ItemStackHandler"));
+		super.readFromNBT(nbt);
 	}
 	
 	@Override
