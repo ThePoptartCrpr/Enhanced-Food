@@ -69,7 +69,7 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 	@Override
 	public void readFromNBT(NBTTagCompound nbt) {
 		super.readFromNBT(nbt);
-		this.cooldown = nbt.getInteger("Cooldown");
+		// this.cooldown = nbt.getInteger("Cooldown");
 		this.maxCapacity = nbt.getInteger("MaxCapacity");
 		this.fluidSize = nbt.getInteger("FluidSize");
 		this.handler.deserializeNBT(nbt.getCompoundTag("ItemStackHandler"));
@@ -80,7 +80,7 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 		} else {
 			// this.tank = new FluidTank(this.maxCapacity);
 		}*/
-		NBTTagList nbttaglist = nbt.getTagList("Items", 10);
+		/*NBTTagList nbttaglist = nbt.getTagList("Items", 10);
 		this.ovenItemStacks = new ItemStack[this.getSizeInventory()];
 		
 		for (int i = 0; i < nbttaglist.tagCount(); ++i) {
@@ -90,7 +90,7 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 			if (j >= 0 && j < this.ovenItemStacks.length) {
 				handler.setStackInSlot(j, ItemStack.loadItemStackFromNBT(nbttagcompound));
 			}
-		}
+		}*/
 		
 		this.ovenBurnTime = nbt.getShort("BurnTime");
 		this.cookTime = nbt.getShort("CookTime");
@@ -99,7 +99,7 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 	
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
-		nbt.setInteger("Cooldown", this.cooldown);
+		// nbt.setInteger("Cooldown", this.cooldown);
 		nbt.setInteger("MaxCapacity", this.maxCapacity);
 		nbt.setInteger("FluidSize", this.fluidSize);
 		nbt.setTag("ItemStackHandler", this.handler.serializeNBT());
@@ -111,7 +111,7 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 		nbt.setShort("BurnTime", (short)this.ovenBurnTime);
 		nbt.setShort("CookTime", (short)this.cookTime);
 		nbt.setShort("CookTimeTotal", (short)this.totalCookTime);
-		NBTTagList nbttaglist = new NBTTagList();
+		/*NBTTagList nbttaglist = new NBTTagList();
 		
 		for (int i = 0; i < this.ovenItemStacks.length; ++i) {
 			if (handler.getStackInSlot(i) != null) {
@@ -122,7 +122,7 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 			}
 		}
 		
-		nbt.setTag("Items", nbttaglist);
+		nbt.setTag("Items", nbttaglist);*/
 		return super.writeToNBT(nbt);
 	}
 	
