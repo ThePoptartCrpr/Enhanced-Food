@@ -29,7 +29,7 @@ public abstract class EFRecipeCategory<T, W extends IRecipeWrapper> implements I
 		this.backgroundImage = backgroundImage;
 		this.recipeClass = recipeClass;
 		for (ItemStack stack : displayStacks) {
-			JEIHelper.modRegistry.addRecipeCategoryCraftingItem(stack, getRecipeCategoryUid());
+			JEICompat.modRegistry.addRecipeCategoryCraftingItem(stack, getRecipeCategoryUid());
 		}
 	}
 	

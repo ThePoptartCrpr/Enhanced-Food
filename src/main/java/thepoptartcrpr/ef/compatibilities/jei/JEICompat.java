@@ -19,12 +19,11 @@ import thepoptartcrpr.ef.recipes.OvenRecipes;
 import thepoptartcrpr.ef.utils.Utils;
 
 @JEIPlugin
-public class JEIHelper implements IModPlugin {
+public class JEICompat implements IModPlugin {
 	
 	public static IJeiHelpers jeiHelpers;
 	public static IModRegistry modRegistry;
 	public static IDrawable slotDrawable;
-	// public static ITooltipCallback fluidTooltipCallback = new 
 	
 	@Override
 	public void onRuntimeAvailable(IJeiRuntime runtime) {
@@ -45,7 +44,6 @@ public class JEIHelper implements IModPlugin {
 		modRegistry.addRecipeHandlers(categories);
 		
 		modRegistry.addRecipes(new ArrayList(OvenRecipes.recipeList));
-		Utils.getConsole().info("Added recipes " + OvenRecipes.recipeList);
 	}
 
 	@Override
