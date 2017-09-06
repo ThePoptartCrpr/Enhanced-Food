@@ -46,7 +46,7 @@ public class OvenRecipes {
 		return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1.getMetadata());
 	}
 	
-	public static void addOvenRecipe(ItemStack output, Object input) {
+	public static void addOvenRecipe(Object input, ItemStack output) {
 		ItemStack inputStack = (ItemStack) input;
 		if (getOvenResult(inputStack) != null) {
 			Utils.getConsole().info("Conflicting recipes, ignoring recipe for " + input);
