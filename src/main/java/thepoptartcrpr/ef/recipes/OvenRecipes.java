@@ -20,23 +20,22 @@ public class OvenRecipes {
 	public final Object input;
 	public final ItemStack output;
 	
-	private static final Map<ItemStack, ItemStack> ovenList = Maps.<ItemStack, ItemStack>newHashMap();
 	public static ArrayList<OvenRecipes> recipeList = new ArrayList<OvenRecipes>();
 	
 	public static void registerOvenRecipes() {
 		addOvenRecipe(new ItemStack(EFItems.breadDough), new ItemStack(Items.BREAD));
 	}
 	
-	public OvenRecipes(ItemStack output, Object input) {
+	public OvenRecipes(Object input, ItemStack output) {
 		this.output = output;
 		this.input = input;
 	}
 	
 	@Nullable
 	public static ItemStack getOvenResult(ItemStack stack) {
-		for (Entry<ItemStack, ItemStack> entry : ovenList.entrySet()) {
-			if (compareItemStacks(stack, (ItemStack)entry.getKey())) {
-				return (ItemStack)entry.getValue();
+		for (int i = 0; i < recipeList.size(); i++) {
+			if (ItemStack.areItemsEqual((ItemStack) recipeList.get(i).input, stack)) {
+				return (ItemStack) recipeList.get(i).output;
 			}
 		}
 		return null;
@@ -51,25 +50,20 @@ public class OvenRecipes {
 		if (getOvenResult(inputStack) != null) {
 			Utils.getConsole().info("Conflicting recipes, ignoring recipe for " + input);
 		} else {
-			ovenList.put(inputStack, output);
 			OvenRecipes recipe = new OvenRecipes(inputStack, output);
 			recipeList.add(recipe);
-			Utils.getConsole().info(recipeList);
 		}
 	}
 	
 	public static void addOvenRecipe(Block input, Item output) {
-		Item inputBlock = Item.getItemFromBlock(input);
-		ItemStack inputStack = new ItemStack(inputBlock);
+		ItemStack inputStack = new ItemStack(Item.getItemFromBlock(input));
 		ItemStack outputStack = new ItemStack(output);
 		if (getOvenResult(inputStack) != null) {
 			Utils.getConsole().info("Conflicting recipes, ignoring recipe for " + input);
 		} else {
-			ovenList.put(inputStack, outputStack);
 			outputStack = new ItemStack(output);
-			OvenRecipes recipe = new OvenRecipes(outputStack, input);
+			OvenRecipes recipe = new OvenRecipes(inputStack, outputStack);
 			recipeList.add(recipe);
-			Utils.getConsole().info(recipeList);
 		}
 	}
 	
@@ -78,23 +72,18 @@ public class OvenRecipes {
 		if (getOvenResult(inputStack) != null) {
 			Utils.getConsole().info("Conflicting recipes, ignoring recipe for " + input);
 		} else {
-			ovenList.put(inputStack, output);
-			OvenRecipes recipe = new OvenRecipes(output, inputStack);
+			OvenRecipes recipe = new OvenRecipes(inputStack, output);
 			recipeList.add(recipe);
-			Utils.getConsole().info(recipeList);
 		}
 	}
 	
 	public static void addOvenRecipe(Block input, ItemStack output) {
-		Item inputBlock = Item.getItemFromBlock(input);
-		ItemStack inputStack = new ItemStack(inputBlock);
+		ItemStack inputStack = new ItemStack(Item.getItemFromBlock(input));
 		if (getOvenResult(inputStack) != null) {
 			Utils.getConsole().info("Conflicting recipes, ignoring recipe for " + input);
 		} else {
-			ovenList.put(inputStack, output);
-			OvenRecipes recipe = new OvenRecipes(output, input);
+			OvenRecipes recipe = new OvenRecipes(inputStack, output);
 			recipeList.add(recipe);
-			Utils.getConsole().info(recipeList);
 		}
 	}
 	
