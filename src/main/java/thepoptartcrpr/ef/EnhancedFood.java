@@ -75,8 +75,7 @@ public class EnhancedFood {
 		
 		AchievementHandler.registerAchievements();
 		
-		RecipeRemover.removeCrafting(Items.BREAD);
-		RecipeRemover.removeSmelting(new ItemStack(Items.COOKED_BEEF));
+		RecipeHandler.removeRecipes();
 	}
 	
 	@EventHandler
@@ -85,11 +84,7 @@ public class EnhancedFood {
 		
 		eventHandler.registerEvents();
 		
-		RecipeHandler.registerCraftingRecipes();
-		RecipeHandler.registerSmeltingRecipes();
-		
-		OvenRecipes.registerOvenRecipes();
-		CuttingBoardRecipes.registerCuttingRecipes();
+		RecipeHandler.registerRecipes();
 		
 		GrassHandler.registerSeeds();
 	}

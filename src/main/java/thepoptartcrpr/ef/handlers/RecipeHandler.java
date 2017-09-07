@@ -7,13 +7,34 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import thepoptartcrpr.ef.init.EFItems;
+import thepoptartcrpr.ef.recipes.CuttingBoardRecipes;
+import thepoptartcrpr.ef.recipes.OvenRecipes;
 
 public class RecipeHandler {
+	
+	public static void removeRecipes() {
+		
+		// Crafting
+		RecipeRemover.removeCrafting(Items.BREAD);
+		
+		// Smelting
+		RecipeRemover.removeSmelting(new ItemStack(Items.COOKED_BEEF));
+	}
+	
+	public static void registerRecipes() {
+		
+		// Vanilla machines
+		registerCraftingRecipes();
+		registerSmeltingRecipes();
+		
+		// Custom machines
+		OvenRecipes.registerOvenRecipes();
+		CuttingBoardRecipes.registerCuttingRecipes();
+	}
 	
 	public static void registerCraftingRecipes() {
 		// Shapeless
 		GameRegistry.addShapelessRecipe(new ItemStack(EFItems.filletedTuna, 1), new Object[] { EFItems.fishTuna });
-		// GameRegistry.addShapelessRecipe(new ItemStack(Items.APPLE, 1), new Object[] { new ItemStack(EFItems.saw, 1, OreDictionary.WILDCARD_VALUE), EFItems.salt });
 		GameRegistry.addShapelessRecipe(new ItemStack(EFItems.cutWood, 3), new Object[] { new ItemStack(EFItems.saw, 1, OreDictionary.WILDCARD_VALUE), Blocks.PLANKS });
 		
 		// Shaped
@@ -26,7 +47,6 @@ public class RecipeHandler {
 	}
 	
 	public static void registerSmeltingRecipes() {
-		// GameRegistry.addSmelting(EFItems.breadDough, new ItemStack(Items.BREAD), 0.3f);
 	}
 	
 	private static void registerToolRecipe(Item ingot, Item pickaxe, Item axe, Item shovel, Item hoe, Item sword) {
