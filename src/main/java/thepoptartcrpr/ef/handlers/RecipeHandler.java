@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+import thepoptartcrpr.ef.api.EFRecipeAPI;
 import thepoptartcrpr.ef.init.EFItems;
 import thepoptartcrpr.ef.recipes.CuttingBoardRecipes;
 import thepoptartcrpr.ef.recipes.OvenRecipes;
