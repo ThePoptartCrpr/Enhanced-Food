@@ -240,7 +240,7 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 	// }
 	
 	@Override
-	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate) {
+	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newState) {
 		return false;
 	}
 	

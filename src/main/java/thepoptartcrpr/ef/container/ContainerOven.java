@@ -45,7 +45,6 @@ public class ContainerOven extends Container {
 			this.addSlotToContainer(new Slot(playerInv, x, xPos + x * 18, yPos + 58));
 		}
 		
-		// Utils.getConsole().info("handler.getSlots() " + handler.getSlots());
 	}
 	
 	@Override

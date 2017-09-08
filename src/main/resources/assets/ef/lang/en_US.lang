@@ -34,6 +34,12 @@ item.cut_wood.name=Cut Wood
 container.oven=Oven
 container.cutting_board=Cutting Board
 
+gui.oven.fuel_bucket.tooltip=Insert a Fuel Bucket here
+gui.oven.fuel_bar_1.tooltip=Fill: 
+gui.oven.fuel_bar_2.tooltip= / 
+gui.oven.fuel_bar_3.tooltip= (
+gui.oven.fuel_bar_4.tooltip= items)
+
 itemGroup.effood=Enhanced Food - Food
 itemGroup.efcrops=Enhanced Food - Crops
 itemGroup.efingredient=Enhanced Food - Ingredients
