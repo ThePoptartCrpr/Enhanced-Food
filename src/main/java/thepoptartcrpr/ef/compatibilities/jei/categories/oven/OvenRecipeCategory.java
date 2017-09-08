@@ -42,7 +42,6 @@ public class OvenRecipeCategory extends EFRecipeCategory<OvenRecipes, OvenRecipe
 		guiItemStacks.set(0, ingredients.getInputs(ItemStack.class).get(0));
 		guiItemStacks.set(1, ingredients.getOutputs(ItemStack.class));
 		guiItemStacks.set(2, UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, EFFluid.fuel));
-		Utils.getConsole().info("Set recipe");
 	}
 
 	@Override

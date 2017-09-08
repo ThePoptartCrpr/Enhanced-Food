@@ -62,6 +62,15 @@ public class CuttingBoardRecipes {
 		return 0;
 	}
 	
+	public static boolean requiresKnife(ItemStack output) {
+		for (int i = 0; i < recipeList.size(); i++) {
+			if (ItemStack.areItemsEqual((ItemStack) recipeList.get(i).output, output)) {
+				return recipeList.get(i).noTime != 0;
+			}
+		}
+		return false;
+	}
+	
 	public static void addCuttingRecipe(ItemStack output, Object input, int knifeTime, int noTime) {
 		ItemStack inputStack = (ItemStack) input;
 		if (getCuttingResult(inputStack) != null) {

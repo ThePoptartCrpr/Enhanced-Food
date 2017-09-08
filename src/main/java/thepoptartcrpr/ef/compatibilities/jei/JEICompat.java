@@ -14,7 +14,9 @@ import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.gui.IDrawable;
 import mezz.jei.api.ingredients.IModIngredientRegistration;
 import mezz.jei.api.recipe.IRecipeCategory;
+import thepoptartcrpr.ef.compatibilities.jei.categories.cuttingboard.CuttingBoardRecipeCategory;
 import thepoptartcrpr.ef.compatibilities.jei.categories.oven.OvenRecipeCategory;
+import thepoptartcrpr.ef.recipes.CuttingBoardRecipes;
 import thepoptartcrpr.ef.recipes.OvenRecipes;
 import thepoptartcrpr.ef.utils.Utils;
 
@@ -38,12 +40,14 @@ public class JEICompat implements IModPlugin {
 		IGuiHelper guiHelper = jeiHelpers.getGuiHelper();
 		slotDrawable = guiHelper.getSlotDrawable();
 		EFRecipeCategory[] categories = {
-				new OvenRecipeCategory(guiHelper)
+				new OvenRecipeCategory(guiHelper),
+				new CuttingBoardRecipeCategory(guiHelper)
 		};
 		modRegistry.addRecipeCategories(categories);
 		modRegistry.addRecipeHandlers(categories);
 		
 		modRegistry.addRecipes(new ArrayList(OvenRecipes.recipeList));
+		modRegistry.addRecipes(new ArrayList(CuttingBoardRecipes.recipeList));
 	}
 
 	@Override
