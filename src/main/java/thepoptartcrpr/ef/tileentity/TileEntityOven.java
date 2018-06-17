@@ -154,6 +154,7 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 				}
 			}
 			
+			this.totalCookTime = 50;
 			if (this.isBurning() || handler.getStackInSlot(1) != null && handler.getStackInSlot(0) != null) {
 				if (!this.isBurning() && this.canSmelt()) {
 					this.currentItemBurnTime = this.ovenBurnTime = this.fluidSize;
@@ -185,7 +186,7 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 			}
 			
 			else if (!this.isBurning() && this.cookTime > 0) {
-				this.cookTime = MathHelper.clamp_int(this.cookTime - 2, 0, this.totalCookTime);
+				this.cookTime = 0;
 			}
 			
 			if (flag != this.isBurning()) {
@@ -348,8 +349,8 @@ public class TileEntityOven extends TileEntity implements ITickable, ICapability
 	}
 	
 	public int getCookTime(ItemStack stack) {
-		this.totalCookTime = 25;
-		return 25;
+		this.totalCookTime = 50;
+		return this.totalCookTime;
 	}
 	
 	public int getSizeInventory() {
